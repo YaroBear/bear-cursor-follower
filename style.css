@@ -1,0 +1,28 @@
+.bear {
+    width: 32px;
+    height: 32px;
+    background: url("./bear.png") left top;
+    /* animation: play 0.8s steps(3) infinite; */
+    /* background-position: -5px 32px; */
+    image-rendering: pixelated;
+}
+
+@keyframes play {
+    100% { background-position: -96px top; }
+ }
+
+.down {
+    background-position: left top;
+}
+
+.up {
+    background-position: left -96px;
+}
+
+.left {
+    background-position: left -32px;
+}
+
+.right {
+    background-position: left -64px;
+}
