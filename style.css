@@ -1,14 +1,15 @@
 .bear {
     width: 32px;
     height: 32px;
+    position: absolute;
     background: url("./bear.png") left top;
-    /* animation: play 0.8s steps(3) infinite; */
+    animation: play 0.8s steps(3) infinite;
     /* background-position: -5px 32px; */
     image-rendering: pixelated;
 }
 
 @keyframes play {
-    100% { background-position: -96px top; }
+    100% { background-position-x: -96px; }
  }
 
 .down {
