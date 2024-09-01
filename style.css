@@ -4,13 +4,14 @@
     position: absolute;
     background: url("./bear.png") left top;
     animation: play 0.8s steps(3) infinite;
-    /* background-position: -5px 32px; */
     image-rendering: pixelated;
 }
 
 @keyframes play {
-    100% { background-position-x: -96px; }
- }
+    100% {
+        background-position-x: -96px;
+    }
+}
 
 .down {
     background-position: left top;
