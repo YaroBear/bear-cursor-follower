@@ -1,14 +1,9 @@
-const convertToDegrees = (angle) => {
-    return (angle * 180) / Math.PI;
-};
-
 const calcAngleRadians = (x, y) => {
     return Math.atan2(y, x);
 };
 
-const lerp = (a, b, alpha) => {
-    return a + alpha * (b - a);
-};
+const pi_forth = Math.PI / 4;
+const three_pi_forth = 3 * pi_forth;
 
 const getRelativeAngle = (bear, mouseEvent) => {
     const rect = bear.getBoundingClientRect();
@@ -19,22 +14,22 @@ const getRelativeAngle = (bear, mouseEvent) => {
     return calcAngleRadians(x, y);
 };
 
-const lookAtCursor = (relativeAngle) => {
-    const abs_angle = Math.abs(relativeAngle);
+const lookAtCursor = (angleRad) => {
+    const abs_angle = Math.abs(angleRad);
 
-    if (abs_angle < 45) {
+    if (abs_angle < pi_forth) {
         bear.className = "bear";
         bear.classList.add("right");
     }
-    if (abs_angle > 135) {
+    if (abs_angle > three_pi_forth) {
         bear.className = "bear";
         bear.classList.add("left");
     }
-    if (relativeAngle < -45 && relativeAngle > -135) {
+    if (angleRad < -pi_forth && angleRad > -three_pi_forth) {
         bear.className = "bear";
         bear.classList.add("down");
     }
-    if (relativeAngle > 45 && relativeAngle < 135) {
+    if (angleRad > pi_forth && angleRad < three_pi_forth) {
         bear.className = "bear";
         bear.classList.add("up");
     }
@@ -63,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     document.onmousemove = (e) => {
         angleRad = getRelativeAngle(bear, e);
-        lookAtCursor(convertToDegrees(angleRad));
+        lookAtCursor(angleRad);
     };
 
     window.requestAnimationFrame(step);
