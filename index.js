@@ -41,7 +41,7 @@ function step(timeStamp) {
     let x = Number(bear.style.left.replace("px", ""));
     let y = Number(bear.style.top.replace("px", ""));
 
-    if (Math.abs(x - mouseX) >= 10 && Math.abs(y - mouseY) >= 10) {
+    if (Math.abs(x - mouseX) >= 10 || Math.abs(y - mouseY) >= 10) {
         x += magnitude * Math.cos(angleRad);
         y -= magnitude * Math.sin(angleRad);
 
