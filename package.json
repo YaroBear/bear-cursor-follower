@@ -2,10 +2,14 @@
     "name": "bear-cursor-follower",
     "version": "1.0.0",
     "description": "A bear the insists to always be by your cursor",
-    "main": "index.js",
+    "main": "dist/bundle.js",
+    "files": [
+        "dist/"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
+        "build": "webpack",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -17,6 +21,12 @@
         "url": "https://github.com/YaroBear/bear-cursor-follower/issues"
     },
     "homepage": "https://github.com/YaroBear/bear-cursor-follower#readme",
+    "keywords": [
+        "cursor-follower",
+        "animation",
+        "web-component",
+        "bear"
+    ],
     "devDependencies": {
         "file-loader": "^6.2.0",
         "terser-webpack-plugin": "^5.3.14",
